@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH -c 2
 #SBATCH -J TCB-xnat2bids
-#SBATCH --output /gpfs/data/bnc/shared/logs/mrestrep/%J.txt
+#SBATCH --output ../logs/%J.txt
 
 #--------- Variables ---------
 
