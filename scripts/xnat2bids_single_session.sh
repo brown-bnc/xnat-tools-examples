@@ -3,7 +3,7 @@
 #SBATCH --mem=16GB
 #SBATCH -N 1
 #SBATCH -c 2
-#SBATCH -J TCB-xnat2bids
+#SBATCH -J xnat2bids
 #SBATCH --output ../logs/%J.txt
 
 #--------- Variables ---------
@@ -25,7 +25,8 @@ mkdir -m 775 ${bids_root_dir}
 bidsmap_file=${data_dir}/shared/xnat-tools-examples/${USER}/bidsmaps/sanes_sadlum.json
 
 # based on XNAT Accesion Number for the MR-Session (you must have access in XNAT)
-session="XNAT_E00002"	
+# session="XNAT_E00002"	#117
+session="XNAT3_E00001" #123
 
 # our output session will be named sess-sesion_suffix
 session_suffix="01" 
