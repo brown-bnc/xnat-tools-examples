@@ -29,3 +29,22 @@ Plase clone this repository. If this is your first time working with xnat-tools,
    cd $USER
    mkdir -m 775 logs
    ```
+
+### 2. Set-up variables
+
+1. Export your xnat user and password in the current session
+
+```
+export XNAT_USER=<user>
+export XNAT_PASSWORD=<psswd>
+export XNAT_SESSION=<xnat_session_accession_number>
+```
+
+⚠️ If you your code and data does not live in `/gpfs/data/bnc/shared` then you also need to make sure that `data_dir`, `bids_root_dir` and `bidsmap_file` inside `xnat2bids_single_session.sh` are correct
+
+### 2. Run script
+
+```
+cd scripts
+sbatch xnat2bids_single_session.sh
+```

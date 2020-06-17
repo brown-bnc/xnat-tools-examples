@@ -20,7 +20,7 @@ data_dir=/gpfs/data/bnc
 # Both should be inside the data_dir, otherwise it won't be seen by singularity                     
 bids_root_dir=${data_dir}/shared/bids-export/${USER}
 
-mkdir -m 775 ${bids_root_dir}
+mkdir -m 770 ${bids_root_dir}
 
 bidsmap_file=${data_dir}/shared/xnat-tools-examples/${USER}/bidsmaps/sanes_sadlum.json
 
@@ -34,8 +34,7 @@ simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
 # runs singularity command to extract DICOMs from xnat and export to BIDS
 singularity exec -B ${data_dir}                                         \
-    ${simg} xnat2bids        			                                \
+    ${simg} xnat-heudiconv        			                            \
     --user ${XNAT_USER} --password "${XNAT_PASSWORD}"                   \
     --session ${XNAT_SESSION} --session_suffix ${session_suffix}             \
     --bids_root_dir ${bids_root_dir}                                    \
-    --bidsmap_file ${bidsmap_file}                                  	\
