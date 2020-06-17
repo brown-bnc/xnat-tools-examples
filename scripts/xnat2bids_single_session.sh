@@ -18,7 +18,10 @@ data_dir=/gpfs/data/bnc
 # The first directory is where your dicoms and bids data will be exported to. 
 # The second directory is the bidsmap file for your study
 # Both should be inside the data_dir, otherwise it won't be seen by singularity                     
-bids_root_dir=${data_dir}/shared/xnat2bids-${USER}/bids-export
+bids_root_dir=${data_dir}/shared/bids-export/${USER}
+
+mkdir -m 775 ${bids_root_dir}
+
 bidsmap_file=${data_dir}/shared/xnat-tools-${USER}/bidsmaps/sanes_sadlum.json
 
 # based on XNAT Accesion Number for the MR-Session (you must have access in XNAT)
