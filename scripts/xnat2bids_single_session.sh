@@ -25,7 +25,7 @@ mkdir -m 775 ${bids_root_dir}
 bidsmap_file=${data_dir}/shared/xnat-tools-examples/${USER}/bidsmaps/sanes_sadlum.json
 
 # based on XNAT Accesion Number for the MR-Session (you must have access in XNAT)
-session="XNAT_E00001"	
+session="XNAT_E00002"	
 
 # our output session will be named sess-sesion_suffix
 session_suffix="01" 
