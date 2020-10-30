@@ -7,7 +7,7 @@ Thus far the scripts included assume you are working from oscar
 
 Plase clone this repository. If this is your first time working with xnat-tools, you can use BNC's shared folder in Oscar.
 
-### 1. Set-up the scripts
+### Set-up the scripts
 
 1. Login into Oscar
 
@@ -29,22 +29,37 @@ Plase clone this repository. If this is your first time working with xnat-tools,
    cd $USER
    mkdir -m 775 logs
    ```
+## Running in Oscar
 
-### 2. Set-up variables
-
-1. Export your xnat user and password in the current session
+If you are in Oscar, the in the terminal navigate to the directory for the corresponding scripts
 
 ```
-export XNAT_USER=<user>
-export XNAT_PASSWORD=<psswd>
-export XNAT_SESSION=<xnat_session_accession_number>
+cd oscar-sbatch
+```
+
+### Set-up variables
+
+Create a `.env` file inside the current directory and place your secrets
+
+⚠️ At the end of this session you should delete the file, or at least your password
+
+```
+XNAT_USER=<user>
+XNAT_PASSWORD=<psswd>
+XNAT_SESSION=<xnat_session_accession_number>
 ```
 
 ⚠️ If you your code and data does not live in `/gpfs/data/bnc/shared` then you also need to make sure that `data_dir`, `bids_root_dir` and `bidsmap_file` inside `xnat2bids_single_session.sh` are correct
 
-### 2. Run script
+### Run script
 
 ```
-cd scripts
 sbatch xnat2bids_single_session.sh
 ```
+
+### View logs
+
+```
+cat ../logs/<jobid>.txt
+```
+
