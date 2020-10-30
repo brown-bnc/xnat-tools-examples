@@ -22,6 +22,10 @@ data_dir=/gpfs/data/bnc
 bids_root_dir=${data_dir}/shared/bids-export/${USER}
 mkdir -m 775 ${bids_root_dir} || echo "Output directory already exists"
 
+# Bidsmap file for your study
+# It has to be under the data_dir, otherwise it won't be seen by singularity
+bidsmap_file=${data_dir}/shared/xnat-tools-examples/${USER}/bidsmaps/sanes_sadlum.json
+
 # Path to Singularity Image for xnat-tools (maintained by bnc)
 simg=/gpfs/data/bnc/simgs/brownbnc/xnat-tools-${version}.sif
 
@@ -44,4 +48,5 @@ singularity exec --contain -B ${data_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -p "${XNAT_PASSWORD}" \
+    -f ${bidsmap_file} \
     -i 1
