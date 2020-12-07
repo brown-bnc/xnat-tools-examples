@@ -1,0 +1,39 @@
+[
+  {
+    "series_description": "ANAT-LOC",
+    "bidsname": "anat-scout_acq-localizer"
+  },
+  {
+    "series_description": "ANAT-AALOC",
+    "bidsname": "anat-scout_acq-aascout"
+  },
+  {
+    "series_description": "ANAT-AALOC_MPR_cor",
+    "bidsname": "anat-scout_acq-aascoutMPRcor"
+  },
+  {
+    "series_description": "ANAT-AALOC_MPR_sag",
+    "bidsname": "anat-scout_acq-aascoutMPRsag"
+  },
+  {
+    "series_description": "ANAT-AALOC_MPR_tra",
+    "bidsname": "anat-scout_acq-aascoutMPRtra"
+  },
+  {
+    "series_description": "ANAT-MEMPRAGE",
+    "bidsname": "anat-T1w_acq-memprage"
+  },
+  {
+    "series_description": "FUNC-SMS_ACQ-mb2_TASK-LUM",
+    "bidsname": "func-bold_task-lum_run+"
+  },
+  {
+    "series_description": "DIFF-AP_JEN",
+    "bidsname": "dwi_acq-122_dir-ap"
+  },
+  {
+    "series_description": "DIFF-B0_PA_JEN",
+    "bidsname": "dwi_acq-b0_dir-pa"
+  }
+ 
+]
