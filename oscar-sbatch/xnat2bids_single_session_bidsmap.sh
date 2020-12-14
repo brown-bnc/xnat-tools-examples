@@ -11,7 +11,7 @@
 set -u
 
 # version of xnat2bids being used
-version=v1.0.0
+version=v1.0.1
 
 # Your working directory in Oscar, usually /gpfs/data/<your PI's group>.
 # We pass (bind) this path to singularity so that it can access/see it
@@ -49,4 +49,4 @@ singularity exec --contain -B ${data_dir} ${simg} \
     -u ${XNAT_USER} \
     -p "${XNAT_PASSWORD}" \
     -f ${bidsmap_file} \
-    -i 1
+    -v -v -s 6

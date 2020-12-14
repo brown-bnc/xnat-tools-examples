@@ -1,0 +1,17 @@
+
+
+# Your working directory in Oscar, usually /gpfs/data/<your PI's group>.
+# We pass (bind) this path to singularity so that it can access/see it
+data_dir: /gpfs/data/bnc
+
+singularity:
+  xnat-tools: /gpfs/data/bnc/simgs/brownbnc/xnat-tools-v1.0.0.sif
+
+# Output directory
+# It has to be under the data_dir, otherwise it won't be seen by singularity
+bids_root_dir: ${data_dir}/shared/bids-export/${USER}
+
+output_dir: /path/to/prepdwi/folder
+
+output_file: /users/mrestrep/bnc/shared/xnat-tools-examples/mrestrep/oscar-snakemake/simple-test/deletme.txt
+

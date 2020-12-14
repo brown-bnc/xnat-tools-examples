@@ -44,4 +44,4 @@ singularity exec --contain -B ${data_dir} ${simg} \
     xnat2bids ${XNAT_SESSION} ${bids_root_dir} \
     -u ${XNAT_USER} \
     -p "${XNAT_PASSWORD}" \
-    -i 1
+    -i 1 -v -v 

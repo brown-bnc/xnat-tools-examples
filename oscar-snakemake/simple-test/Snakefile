@@ -1,0 +1,34 @@
+configfile: "config.yaml"
+
+
+# Read data_dir and output_dir from config.yaml
+# can also override at command-line with e.g.:  --config data_dir='path/to/dir'  or --configfile ...
+
+# envvars:
+#     "XNAT_USER",
+#     "XNAT_PASSWORD"  
+
+rule all:
+  output:
+    config['output_file']
+  shell:
+    '''
+    echo "hello" > {output}
+    '''
+
+# rule xnat2bids:
+#     input:
+#         session = config['xnat_session']
+#     output:
+#         output_dir = config['output_dir']
+#     params:
+#         user=os.environ["XNAT_USER"]
+#         psswd=os.environ["XNAT_PASSWORD"]
+#     container: config['singularity']['xnat-tools']
+#     shell:
+#         ''' 
+#         echo "hello"
+#         '''
+    # shell:
+    #     "xnat2bids {input.session} {output.ouput_dir}"
+    #     "-u {params.user} -p {params.psswd} -i 1"

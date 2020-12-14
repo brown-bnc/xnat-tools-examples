@@ -1,0 +1,6 @@
+
+name: bnc-snakemake-test
+channels:
+  - bioconda
+dependencies:
+  - snakemake
